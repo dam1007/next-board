@@ -21,4 +21,27 @@ a {text-decoration: none; color: #111;}
 .list-item p {
   color: grey;
   margin : 5px 0px;
-} 
+}
+.btn-edit {
+  background: #efefef;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+/* 글 작성 페이지 */
+.p-20 {
+  padding: 20px;
+}
+input, textarea {
+  box-sizing: border-box;
+  padding: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+button {
+  padding: 10px 15px;
+  background: #efefef;
+  border: none;
+  border-radius: 5px;
+}
