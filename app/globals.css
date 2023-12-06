@@ -24,7 +24,8 @@ a {text-decoration: none; color: #111;}
   color: grey;
   margin : 5px 0px;
 }
-.btn-edit {
+.btn-edit,
+.btn_del {
   background: #efefef;
   padding: 5px 10px;
   border-radius: 5px;
