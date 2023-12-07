@@ -1,11 +1,15 @@
 import { connectDB } from "@/util/database.js";
-const { MongoClient } = require('mongodb');
+
+// 4. DB에서 직접 가져온 데이터 캐싱하기
+// revalidate 예약변수 쓰면 페이지 단위 캐싱 가능
+// 사용자가 해당 페이지 방문 시 60초 동안 페이지 캐싱
+export const revalidate = 60;
 
 export default async function Home() {
 
-  /* const client = await connectDB;
+  const client = await connectDB;
   const db = client.db("forum");
-  let result = await db.collection('post').find().toArray(); */
+  let result = await db.collection('post').find().toArray();
 
   // GET요청 결과 캐싱하기
   await fetch('/URL', {cache: 'force-cache'})
@@ -16,7 +20,7 @@ export default async function Home() {
 
   // 3. 60초마다 캐싱된 데이터 갱신해줌
   // await fetch('/URL', {next : {revalidate : 60}})
-  
+
   return (
     <div>{/* {result[0].title} */}</div>
   )
