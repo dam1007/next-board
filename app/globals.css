@@ -1,5 +1,21 @@
 
+* {margin: 0; padding: 0;}
+body {padding: 0 10px;}
 a {text-decoration: none; color: #111;}
+
+/* 네비게이션 바 */
+.navbar {
+  background: white;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+} 
 
 /* 리스트 페이지 */
 .list-bg {

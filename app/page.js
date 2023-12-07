@@ -12,7 +12,7 @@ export default async function Home() {
   let result = await db.collection('post').find().toArray();
 
   // GET요청 결과 캐싱하기
-  await fetch('/URL', {cache: 'force-cache'})
+  // await fetch('/URL', {cache: 'force-cache'})
   // 주의! await fetch('/URL')만 써도 캐싱됨.
 
   // 2. 실시간 데이터가 필요해 캐싱하면 안될 경우
@@ -22,6 +22,6 @@ export default async function Home() {
   // await fetch('/URL', {next : {revalidate : 60}})
 
   return (
-    <div>{/* {result[0].title} */}</div>
+    <div>{result[0].title}</div>
   )
 }
