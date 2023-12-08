@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const url = 'mongodb+srv://dam1007:ato10410!@cluster0.q5kyiis.mongodb.net/?retryWrites=true&w=majority'
+const url = 'mongodb+srv://dam1007:ato10410!@cluster0.q5kyiis.mongodb.net/forum?retryWrites=true&w=majority'
 const options = { useNewUrlParser: true }
 let connectDB;
 

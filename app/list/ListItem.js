@@ -26,7 +26,7 @@ export default function ListItem({result}) {
                         fetch('/api/post/delete', {
                             method: 'DELETE',
                             // POST 요청 시 데이터 전달할 때 객체나 배열은 JSON.stringify 꼭 써줘야 함.
-                            body: JSON.stringify(element._id)
+                            body: JSON.stringify({id: element._id, author: element.author})
                         }).then((res) => {
                             if (res.status == 200) {
                                 return res.json();

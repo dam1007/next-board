@@ -16,7 +16,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   // 서버 컴포넌트, 서버 기능 안에서 로그인된 회원 정보 아는 법
   let session = await getServerSession(authOptions);
-  console.log(session.user);
+  // console.log(session.user);
 
   return (
     <html lang="en">

@@ -1,7 +1,15 @@
 // 글 작성 서버
 import { connectDB } from "@/util/database.js";
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/pages/api/auth/[...nextauth]'
 
 export default async function handler(req, res) {
+    // 서버 컴포넌트, 서버 기능 안에서 로그인된 회원 정보 아는 법
+    // getServerSession() : 서버 기능 안에서 사용 시, res, req 같이 써줘야 함.
+    let session = await getServerSession(req, res, authOptions);
+    if (session) {
+        req.body.author = session.user.email;
+    }
     
     if (req.method == "POST") {
         if (req.body.title == '') {
