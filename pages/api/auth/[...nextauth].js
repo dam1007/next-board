@@ -62,7 +62,7 @@ export const authOptions = {
                 token.user.email = user.email
             }
             return token;
-        }, 
+        },
         //5. 유저 세션이 조회될 때 마다 실행되는 코드
         session: async ({ session, token }) => {
             session.user = token.user; // 컴포넌트 안에 보여줄 유저정보
