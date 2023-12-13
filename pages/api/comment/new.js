@@ -10,16 +10,16 @@ export default async function handler(req, res) {
     if (session != null) {
         if (req.method == "POST") {
             req.body = JSON.parse(req.body);
-    
             let data = {
                 content : req.body.comment,
                 author : session.user.email,
-                parent : new ObjectId(req.body._id)
+                parent : new ObjectId(req.body._id),
+                author_name : req.body.author_name
             }
     
             let db = (await connectDB).db("forum");
             db.collection('comment').insertOne(data);
-            res.status(200).json('저장완료')
+            res.status(200).json('완료')
         }
     }
     

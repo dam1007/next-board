@@ -17,6 +17,24 @@ a {text-decoration: none; color: #111;}
   font-weight: bold;
 } 
 
+/* 글 작성 페이지 */
+.p-20 {
+  padding: 20px;
+}
+input, textarea {
+  box-sizing: border-box;
+  padding: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+button {
+  padding: 10px 15px;
+  background: #efefef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* 리스트 페이지 */
 .list-bg {
   background: rgb(249, 250, 255);
@@ -40,6 +58,9 @@ a {text-decoration: none; color: #111;}
   color: grey;
   margin : 5px 0px;
 }
+
+.btn_wrap {display: flex; justify-content: space-between; align-items: center;}
+
 .btn-edit,
 .btn_del {
   background: #efefef;
@@ -47,20 +68,10 @@ a {text-decoration: none; color: #111;}
   border-radius: 5px;
   font-size: 13px;
 }
+.btn_del {margin-left: 5px;}
 
-/* 글 작성 페이지 */
-.p-20 {
-  padding: 20px;
-}
-input, textarea {
-  box-sizing: border-box;
-  padding: 10px;
-  display: block;
-  margin-bottom: 10px;
-}
-button {
-  padding: 10px 15px;
-  background: #efefef;
-  border: none;
-  border-radius: 5px;
+.btn_like {
+  background: none;
+  font-weight: bold;
+  color: blue;
 }
