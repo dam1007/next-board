@@ -15,13 +15,20 @@ export default function ListItem({result}) {
     // console.log(result.result);
 
     // 좋아요 기능
-    let [like, setLike] = useState(false);
-    console.log(result);
+    let [like, setLike] = useState();
+    let [multicount, setmulticount] = useState([0,0,0]);
+    // console.log(result);
+    useEffect(() => {
+        fetch('/api/post/like',
+            {method: 'GET'}
+        )
+        .then(result => result = result.json())
+        .then(result => {
+            console.log(result)
+            // setLike(result.length)
+        })
+    }, [])
 
-    /* function upLike() {
-        console.log('11');
-    }
- */
     return (
         <>
             {result.map((element, index) =>
@@ -66,15 +73,18 @@ export default function ListItem({result}) {
                         </div>
                         <div>
                             <button className="btn_like" onClick={(e) => {
-                                // console.log();
                                 fetch('/api/post/like',
                                     {method: 'POST', body: JSON.stringify({
                                         id: element._id,
-                                        click: true
                                     })}
-                                ).then(result => console.log(result.json()))
+                                )
+                                .then(result => result = result.json())
+                                .then(result => {
+                                    console.log(result)
+                                    setLike(result.length)
+                                })
                             }}>좋아요 👍</button>
-                            <span>0</span>
+                            <span>{like}</span>
                         </div>
                     </div>
                 </div>

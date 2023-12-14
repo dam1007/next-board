@@ -7,6 +7,7 @@ export default function Comment({props}) {
     // 유저가 입력한 값을 state에 저장해두고 쓰기
     let [comment, setComment] = useState('');
     let [data, setData] = useState([]);
+
     // 댓글 조회 기능 - client에서 DB 출력 사용하면 안 되므로 useEffect로 서버 요청
     useEffect(() => {
         fetch('/api/comment/list?id=' + props.id).then(result => result.json())
@@ -14,7 +15,7 @@ export default function Comment({props}) {
             setData(result);
         })
     }, [])
-    // console.log({props});
+    
     return (
         <div>
             <ul>
