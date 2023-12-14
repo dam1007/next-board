@@ -1,6 +1,6 @@
 // 글 수정 페이지
 import { connectDB } from "@/util/database.js";
-import { ObjectId } from "bson"
+import { ObjectId } from "mongodb"
 
 export default async function Edit(props) {
     // console.log(props.params.id);
